@@ -24,7 +24,7 @@
 # print(average_1)
 
 
-def format_date(*, day: int, month: str):
+def format_date(*, day: int, month: str) -> str:
     return f"The date is {day} of {month}"
 
 
