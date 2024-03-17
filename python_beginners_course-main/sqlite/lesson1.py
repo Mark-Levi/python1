@@ -8,12 +8,11 @@ import sqlite3 as sq
 # При работе через менеджера база закрывается автоматически
 with sq.connect("saper.db") as con:
     cur = con.cursor()
-    cur.execute("DROP TABLE IF EXISTS users")
+    cur.execute("DROP TABLE IF EXISTS games")
     cur.execute(
-        """CREATE TABLE IF NOT EXISTS users (
-                user_id INTEGER PRIMARY KEY AUTOINCREMENT,
-                name TEXT NOT NULL,
-                sex INTEGER DEFAULT 1,
-                old INTEGER,
+        """CREATE TABLE IF NOT EXISTS games (
+                game_id INTEGER PRIMARY KEY AUTOINCREMENT,
+                user_id INTEGER,
+                time INTEGER,
                 score INTEGER)"""
     )
